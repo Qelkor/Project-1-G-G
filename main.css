@@ -1,0 +1,52 @@
+body {
+    background-image: url("images/background.png");
+    margin: auto;
+    text-align: center;
+}
+
+.mainMenu {
+    background-color: beige;
+    width: 50%;
+    margin: auto;
+}
+
+#choose {
+    width: 10rem;
+    height: 10rem;
+}
+
+.intro {
+    background-color: beige;
+    width: 80%;
+    margin: auto;
+    /*position: relative;*/
+    border: 1px solid black;
+}
+
+.game-map {
+    position: relative;
+    margin: 0px auto;
+}
+
+#sprite {
+    box-shadow: 10px 10px 20px black;
+}
+
+#nice {
+    font-family: "Lucida Console", cursive;
+    
+}
+
+.air{
+    background-color: springgreen;
+}
+.water{
+    background-color: azure ;
+}
+.earth{
+    background-color: slategray;
+}
+.fire{
+    background-color: orangered;
+}
+
