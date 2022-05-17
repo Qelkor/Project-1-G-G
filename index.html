@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Dungeon Master</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="main.css">
-        <script src="app.js" type="module"></script>
-    </head>
-    <body>
-        <h1 id="nice">Gnomes & Goblins</h1>
-        
-        <div class="mainMenu">
-            <h3>Welcome traveller, choose your hero</h3>
-            <img src="images/fire1.png" id="choose" class="fire">
-            <img src="images/water1.png" id="choose" class="water">
-            <img src="images/earth1.png" id="choose" class="earth">
-            <img src="images/air1.png" id="choose" class="air">
-            <br>
-            <button class="selected" id="fire">Fire</button>
-            <button class="selected" id="water">Water</button>
-            <button class="selected" id="earth">Earth</button>
-            <button class="selected" id="air">Air</button>
-            <br>
-            <button id="start">Start Game</button>
-        </div>
-        <div class="intro">
-            <h3>Chapter 1: Dungeons & Goblins</h3>
-            <h3>To move the Chracters use the keys W, S, A and D to move up,down left right respectively.</h3>
-            <p>The objective of the game is to catch a 100 goblins before they escape, good luck brave gnome!</p>
-            <button id="lvl-1">Enter The dungeon</button>
-        </div>
-        
-        <div id="dungeon1" class="game-map">
-    <h2 class="score" id="nice">Goblins Caught: </h2>
-    <h2 class="escaped" id="nice">Goblins Escaped: </h2>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dungeon Master</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="app.js" type="module"></script>
+</head>
+
+<body>
+    <h1 id="nice">Gnomes & Goblins</h1>
+
+    <div class="mainMenu">
+        <h3>Welcome traveller, choose your hero</h3>
+        <img src="images/fire1.png" id="choose" class="fire">
+        <img src="images/water1.png" id="choose" class="water">
+        <img src="images/earth1.png" id="choose" class="earth">
+        <img src="images/air1.png" id="choose" class="air">
+        <br>
+        <button class="selected" id="fire">Fire</button>
+        <button class="selected" id="water">Water</button>
+        <button class="selected" id="earth">Earth</button>
+        <button class="selected" id="air">Air</button>
+        <br>
+        <button id="start">Start Game</button>
+    </div>
+    <div class="intro">
+        <h3>Chapter 1: Dungeons & Goblins</h3>
+        <h3>To move the Chracters use the keys W, S, A and D to move up,down left right respectively.</h3>
+        <p>The objective of the game is to catch a 100 goblins before they escape, good luck brave gnome!</p>
+        <button id="lvl-1">Enter The dungeon</button>
+    </div>
+
+    <div id="dungeon1" class="game-map">
+        <h2 class="score" id="nice">Goblins Caught: </h2>
+        <h2 class="escaped" id="nice">Goblins Escaped: </h2>
         </br>
-            <canvas id="sprite"></canvas>
-       
-            </div>
-</div>
+        <canvas id="sprite"></canvas>
+        </br>
+        <button id="reload" onclick="history.go(0);">Try Again?</button>
+
+    </div>
 
 
 
@@ -51,7 +52,9 @@
 
 
 
-        
-        
-    </body>
+
+
+
+</body>
+
 </html>

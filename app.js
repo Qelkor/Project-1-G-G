@@ -287,8 +287,6 @@ function animate(timestamp) {
 
 function scoreBoard() {
   if (score > 0 || escaped > 0) {
-    // let gobC = document.getElementsByClassName("score");
-    // let gobE = document.getElementsByClassName("escaped");
     $(".score").text(`Goblins Caught :${score}`);
     $(".escaped").text(`Goblins Escaped:${escaped}`);
   }
@@ -298,6 +296,7 @@ function scoreBoard() {
 function checkGameWin() {
   if (score > 100) {
     gameWin = true;
+    goblinIntervals += 300000;
     if (score > 25 || score > 50 || score > 75) {
       goblinIntervals -= 100;
     }
@@ -309,16 +308,16 @@ function checkGameOver() {
   }
 }
 
-function stopAnimation() {
-  window.cancelAnimationFrame(endAnimation);
-}
 
 function gameEnd() {
   if (gameOver || gameWin) {
     let text = "You Win!";
+    $("#reload").show();
+
     if (gameOver) {
       text = "Game Over";
       goblinIntervals = 0;
+      user.x = -100;
       cackle.play();
     }
     ctx.fillStyle = "black";
@@ -346,19 +345,19 @@ window.addEventListener("keyup", function (event) {
 
 function moveSprite() {
   if (keyPresses.w && user.y > 12) {
-    user.y -= user.playerSpeed + 0.4;
+    user.y -= user.playerSpeed + 2.4;
     user.spriteY = 0;
     user.hasMoved = true;
   } else if (keyPresses.s && user.y < 400) {
-    user.y += user.playerSpeed + 0.4;
+    user.y += user.playerSpeed + 2.4;
     user.spriteY = 2;
     user.hasMoved = true;
   } else if (keyPresses.a && user.x > 32) {
-    user.x -= user.playerSpeed + 0.4;
+    user.x -= user.playerSpeed + 2.4;
     user.spriteY = 3;
     user.hasMoved = true;
   } else if (keyPresses.d && user.x < 720) {
-    user.x += user.playerSpeed + 0.4;
+    user.x += user.playerSpeed + 2.4;
     user.spriteY = 1;
     user.hasMoved = true;
   }
@@ -368,6 +367,8 @@ function moveSprite() {
     user.spriteX = 0;
   }
 }
+
+
 // Hidden divs
 $(document).ready(function () {
   $(".intro").hide();
@@ -378,4 +379,5 @@ $(document).ready(function () {
   $("#sprite").hide();
   $(".score").hide();
   $(".escaped").hide();
+  $("#reload").hide();
 });
