@@ -53,7 +53,7 @@ class Goblin {
   update() {
     this.x += this.speed;
     this.frameX >= 2 ? (this.frameX = 0) : this.frameX++;
-    if (this.x > canvasW) {
+    if (this.x > canvasW && gameOver === false) {
       escaped += 1;
       this.goblinsEscaped = true;
     } else if (this.x < -1) {
@@ -63,7 +63,9 @@ class Goblin {
       user.x < this.x + this.w &&
       user.x + user.w > this.x &&
       user.y < this.y + this.h &&
-      user.y + user.h > this.y
+      user.y + user.h > this.y &&
+      gameWin === false &&
+      gameOver === false
     ) {
       score += 1;
       this.x = -this.speed;
@@ -308,7 +310,6 @@ function checkGameOver() {
   }
 }
 
-
 function gameEnd() {
   if (gameOver || gameWin) {
     let text = "You Win!";
@@ -367,7 +368,6 @@ function moveSprite() {
     user.spriteX = 0;
   }
 }
-
 
 // Hidden divs
 $(document).ready(function () {
