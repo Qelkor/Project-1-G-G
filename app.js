@@ -345,19 +345,19 @@ window.addEventListener("keyup", function (event) {
 
 function moveSprite() {
   if (keyPresses.w && user.y > 12) {
-    user.y -= user.playerSpeed + 2.4;
+    user.y -= user.playerSpeed + 0.35;
     user.spriteY = 0;
     user.hasMoved = true;
   } else if (keyPresses.s && user.y < 400) {
-    user.y += user.playerSpeed + 2.4;
+    user.y += user.playerSpeed + 0.35;
     user.spriteY = 2;
     user.hasMoved = true;
   } else if (keyPresses.a && user.x > 32) {
-    user.x -= user.playerSpeed + 2.4;
+    user.x -= user.playerSpeed + 0.35;
     user.spriteY = 3;
     user.hasMoved = true;
   } else if (keyPresses.d && user.x < 720) {
-    user.x += user.playerSpeed + 2.4;
+    user.x += user.playerSpeed + 0.35;
     user.spriteY = 1;
     user.hasMoved = true;
   }
