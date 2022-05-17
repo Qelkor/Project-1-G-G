@@ -17,7 +17,7 @@ let escaped = 0;
 let gameWin = false;
 let gameOver = false;
 let squeak = new Audio("sounds/squeak.wav");
-let cackle = new Audio("sounds/cackle.wav");
+let cackle = new Audio("sounds/Cackle.wav");
 
 //User object to be upgraded
 const user = {
@@ -53,7 +53,7 @@ class Goblin {
   update() {
     this.x += this.speed;
     this.frameX >= 2 ? (this.frameX = 0) : this.frameX++;
-    if (this.x > canvasW && gameOver === false) {
+    if (this.x > canvasW) {
       escaped += 1;
       this.goblinsEscaped = true;
     } else if (this.x < -1) {
